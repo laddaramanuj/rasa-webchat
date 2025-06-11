@@ -606,6 +606,8 @@ class Widget extends Component {
         displayUnreadCount={this.props.displayUnreadCount}
         showMessageDate={this.props.showMessageDate}
         tooltipPayload={this.props.tooltipPayload}
+        poweredByImage={this.props.poweredByImage}
+        poweredByImageStyle={this.props.poweredByImageStyle}
       />
     );
   }
@@ -660,7 +662,9 @@ Widget.propTypes = {
   defaultHighlightAnimation: PropTypes.string,
   defaultHighlightCss: PropTypes.string,
   defaultHighlightClassname: PropTypes.string,
-  messages: ImmutablePropTypes.listOf(ImmutablePropTypes.map)
+  messages: ImmutablePropTypes.listOf(ImmutablePropTypes.map),
+  poweredByImage: PropTypes.string,
+  poweredByImageStyle: PropTypes.shape({})
 };
 
 Widget.defaultProps = {
@@ -676,7 +680,6 @@ Widget.defaultProps = {
   disableTooltips: false,
   defaultHighlightClassname: '',
   defaultHighlightCss: 'animation: 0.5s linear infinite alternate default-botfront-blinker-animation; outline-style: solid;',
-  // unfortunately it looks like outline-style is not an animatable property on Safari
   defaultHighlightAnimation: `@keyframes default-botfront-blinker-animation {
     0% {
       outline-color: rgba(0,255,0,0);
@@ -690,7 +693,9 @@ Widget.defaultProps = {
     100% {
       outline-color: green;
     }
-  }`
+  }`,
+  poweredByImage: null,
+  poweredByImageStyle: {}
 };
 
 export default connect(mapStateToProps, null, null, { forwardRef: true })(Widget);

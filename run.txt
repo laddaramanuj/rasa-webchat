@@ -1,0 +1,17 @@
+npm run build
+
+use the npm 16 version for it
+
+npm -v = 8.19.4
+node -v = v16.20.2
+
+after that 
+rd /s /q node_modules
+del package-lock.json
+npm install --legacy-peer-deps
+npm run build
+
+now go to webpack.prod.js and find for   path: path.join(__dirname, '/lib'),
+
+mostly that index.js yoou would find in lib folder after going through this
+

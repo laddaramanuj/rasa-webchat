@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>My Rasa Chatbot</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .rw-powered-by {
+      color: black !important; /* Changed text color to black */
+      background-color: transparent !important; /* Changed background to transparent */
+      font-family: 'Inter', sans-serif !important;
+      text-decoration: none !important;
+    }
+  </style>
+</head>
+
+<body style="background-color: aquamarine;">
+
+  <script src="index.js"></script>
+  <script>
+
+    WebChat.default({
+      customData: { language: "en" },
+      initPayload: "/greet",        // Initial message sent to Rasa
+      profileAvatar: "https://www.orange.co.bw/favicon.ico",  // Bot avatar image
+      socketUrl: "http://localhost:5005",
+      inputTextFieldHint: "Enter your message", // Placeholder text in input box
+      openLauncherImage: "https://www.orange.co.bw/favicon.ico",     // Custom open button
+      closeLauncherImage: "https://www.orange.co.bw/favicon.ico",    // Custom close button
+      params: {
+        storage: "session" // Use local storage for session
+      },
+      hideWhenNotConnected: true,    // Hide widget if server isn't running
+      socketPath: "/socket.io/",
+      title: "Orange Telecoms",
+      subtitle: "Your Digital Assistant!",
+      poweredByImage: "https://app.aminos.ai/storage/bots/script/images/19170/eyMqL08k_powered_by_19170.png",
+      poweredByImageStyle: {
+        width: '150px',
+        height: 'auto',
+        padding: '5px',
+        border: '1px solid #ccc'
+      }
+    }, null);
+
+  </script>
+</body>
+
+</html>

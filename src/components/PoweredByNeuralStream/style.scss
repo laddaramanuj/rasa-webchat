@@ -1,0 +1,17 @@
+@import "../../scss/variables.scss";
+
+.rw-powered-by {
+  text-align: center;
+  padding: 5px;
+  background-color: transparent;
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Font styles moved to main.html for user control */
+}
+
+.rw-powered-by-image {
+  /* Removed properties that will now be controlled by inline style */
+  display: block; /* Keep display block to remove extra space below image */
+} 

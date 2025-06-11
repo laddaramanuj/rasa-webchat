@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Header from './components/Header';
 import Messages from './components/Messages';
 import Sender from './components/Sender';
+import PoweredByNeuralStream from '../../../PoweredByNeuralStream';
 import './style.scss';
 
 const Conversation = props =>
@@ -27,6 +28,7 @@ const Conversation = props =>
       customComponent={props.customComponent}
       showMessageDate={props.showMessageDate}
     />
+    <PoweredByNeuralStream poweredByImage={props.poweredByImage} poweredByImageStyle={props.poweredByImageStyle} />
     <Sender
       sendMessage={props.sendMessage}
       disabledInput={props.disabledInput}
@@ -51,7 +53,9 @@ Conversation.propTypes = {
   connectingText: PropTypes.string,
   closeImage: PropTypes.string,
   customComponent: PropTypes.func,
-  showMessageDate: PropTypes.oneOfType([PropTypes.bool, PropTypes.func])
+  showMessageDate: PropTypes.oneOfType([PropTypes.bool, PropTypes.func]),
+  poweredByImage: PropTypes.string,
+  poweredByImageStyle: PropTypes.shape({})
 };
 
 export default Conversation;
